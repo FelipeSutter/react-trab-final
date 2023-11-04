@@ -1,0 +1,24 @@
+.header-color {
+  border-bottom: var(--cor3) solid 3px;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  position: sticky;
+  top: 0;
+}
+
+.header-color * {
+  color: rgb(250, 237, 237);
+}
+
+.header-color * :hover {
+  color: var(--cor4);
+}
+
+.header-color * :active {
+  color: none;
+}
+
+.dropdown-menu {
+  color: rgb(250, 237, 237);
+  backdrop-filter: blur(10px);
+}
