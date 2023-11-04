@@ -2,13 +2,13 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import "./Header.css";
+import "./style.css";
 
 function Header() {
   return (
     <Navbar expand="lg" className="header-color">
       <Container>
-        <Navbar.Brand href="#home">Gamer HUB</Navbar.Brand>
+        <Navbar.Brand href="#home">Game Hub</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
