@@ -3,11 +3,15 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./style.css";
-import { Link } from "react-router-dom";
-import { FiLogIn } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
 import { IoPersonCircleOutline } from "react-icons/io5";
 
 function Header() {
+  const navigate = useNavigate();
+  const cat = (categoria) => {
+    navigate("/categoria/" + categoria);
+  };
+
   return (
     <Navbar expand="lg" className="header-color" sticky="top">
       <Container>
@@ -28,14 +32,20 @@ function Header() {
               id="basic-nav-dropdown"
               menuVariant="dark"
             >
-              <Link to={`/categoria/:id`}>
-                <NavDropdown.Item href="categoria/:id">Ação</NavDropdown.Item>
+              <Link to={`/categorias`}>
+                <NavDropdown.Item onClick={() => cat("acao")}>
+                  Ação
+                </NavDropdown.Item>
               </Link>
-              <Link to={`/categoria/:id`}>
-                <NavDropdown.Item href="categoria/:id">Puzzle</NavDropdown.Item>
+              <Link to={`/categorias`}>
+                <NavDropdown.Item onClick={() => cat("puzzle")}>
+                  Puzzle
+                </NavDropdown.Item>
               </Link>
-              <Link to={`/categoria/:id`}>
-                <NavDropdown.Item href="categoria/:id">FPS</NavDropdown.Item>
+              <Link to={`/categorias`}>
+                <NavDropdown.Item onClick={() => cat("fps")}>
+                  FPS
+                </NavDropdown.Item>
               </Link>
             </NavDropdown>
             <Link to={"/login"} className="login-link">

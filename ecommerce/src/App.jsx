@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login/index.jsx";
 import Header from "./components/Header/index.jsx";
 import Footer from "./components/Footer/index.jsx";
+import Categorias from "./pages/Categoria/index.jsx";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:usuario" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/categorias" />
+        <Route path="/categoria/:categoria" element={<Categorias />} />
         <Route path="/contato" />
         <Route path="/carrinho" />
         <Route path="/:jogo" />

@@ -1,0 +1,9 @@
+.categ {
+  position: relative;
+}
+
+.titulo {
+  text-align: center;
+  color: var(--cor1);
+  text-shadow: 5px 5px 3px var(--cor4);
+}
