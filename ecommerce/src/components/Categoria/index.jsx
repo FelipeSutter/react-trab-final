@@ -1,6 +1,5 @@
 import Card from "../card";
 import "./style.css";
-import { Link } from "react-router-dom";
 
 function Categoria({ jogos, categoria }) {
   const jogosCategoria = jogos.filter((jogo) => jogo.categoria == categoria);

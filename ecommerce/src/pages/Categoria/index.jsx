@@ -1,15 +1,16 @@
+import React from "react";
+import Categoria from "../../components/Categoria";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams, Link } from "react-router-dom";
+import Background from "../../components/Background";
 import "./style.css";
-import Categoria from "../../components/Categoria";
-import { Link } from "react-router-dom";
 
-export default function Home() {
-  const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos";
+export default function Categorias() {
   const [jogos, setJogos] = useState([]);
-  const jogosDestaque = jogos
-    .sort((a, b) => b.avaliacao - a.avaliacao)
-    .slice(0, 3);
+  const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos";
+  const { categoria } = useParams();
+  const jogosDestaque = jogos;
 
   const getJogos = async () => {
     try {
@@ -24,19 +25,14 @@ export default function Home() {
     getJogos();
   }, []);
 
-  console.log(jogosDestaque);
-
   return (
     <main>
-      <div className="background">
-        <div className="gradiente"></div>
-      </div>
-      <div>
-        <section id="inicio">
-          <h1>Logo?</h1>
-        </section>
+      <Background />
+      <div className="categ">
         <section id="destaques">
-          <h2>Destaques</h2>
+          <div className="titulo">
+            <h1>{categoria}</h1>
+          </div>
           <div className="grid-container">
             <Link className="conteudo-maior">
               {jogosDestaque[0] && (
@@ -67,11 +63,8 @@ export default function Home() {
             </Link>
           </div>
         </section>
-
         <section id="categorias">
-          <Categoria categoria={"acao"} jogos={jogos} />
-          <Categoria categoria={"puzzle"} jogos={jogos} />
-          <Categoria categoria={"fps"} jogos={jogos} />
+          <Categoria categoria={categoria} jogos={jogos} />
         </section>
       </div>
     </main>
