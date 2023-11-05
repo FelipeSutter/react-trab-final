@@ -4,7 +4,6 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./style.css";
 import { Link } from "react-router-dom";
-import { FiLogIn } from "react-icons/fi";
 import { IoPersonCircleOutline } from "react-icons/io5";
 
 function Header() {
@@ -38,6 +37,9 @@ function Header() {
                 <NavDropdown.Item href="categoria/:id">FPS</NavDropdown.Item>
               </Link>
             </NavDropdown>
+            <Link to={"/sobrenos"}>
+              <Nav.Link href="/sobrenos">Sobre Nós</Nav.Link>
+            </Link>
             <Link to={"/login"} className="login-link">
               <Nav.Link href="/login">Faça Login</Nav.Link>
               <IoPersonCircleOutline />

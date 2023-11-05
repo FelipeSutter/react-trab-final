@@ -2,6 +2,7 @@ import Background from "../../components/Background";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import Input from "../../components/Input_Login";
 
 function Login() {
   const [login, setLogin] = useState("");
@@ -29,22 +30,20 @@ function Login() {
         <h2>Login</h2>
         <form>
           <div className="user-box">
-            <input
+            <Input
               type="text"
               value={login}
-              required=""
-              onChange={(e) => setLogin(e.target.value)}
+              setValue={setLogin}
+              label={"Nome"}
             />
-            <label class="label">Nome</label>
           </div>
           <div className="user-box">
-            <input
+            <Input
               type="password"
               value={senha}
-              required=""
-              onChange={(e) => setSenha(e.target.value)}
+              setValue={setSenha}
+              label={"Senha"}
             />
-            <label class="label">Senha</label>
           </div>
           <button type="button" onClick={entrar}>
             Entrar
