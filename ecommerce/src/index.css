@@ -5,10 +5,15 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #1e1d1d;
+  background-color: #131317;
 
+<<<<<<< Updated upstream
   --cor1: #dedede;
   --cor2: #1e1d1d;
+=======
+  --cor1: #fff;
+  --cor2: #19191c;
+>>>>>>> Stashed changes
   --cor3: #112a39;
   --cor4: #088dbc;
 
