@@ -9,21 +9,25 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 
 function Header() {
   return (
-    <Navbar expand="lg" className="header-color">
+    <Navbar expand="lg" className="header-color" sticky="top">
       <Container>
         <Link to={"/"}>
           <Navbar.Brand href="/">Game Hub</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto" variant="underline">
             <Link to={"/"}>
               <Nav.Link href="/">Home</Nav.Link>
             </Link>
             <Link to={"/contato"}>
               <Nav.Link href="/contato">Contato</Nav.Link>
             </Link>
-            <NavDropdown title="Categorias" id="basic-nav-dropdown">
+            <NavDropdown
+              title="Categorias"
+              id="basic-nav-dropdown"
+              menuVariant="dark"
+            >
               <Link to={`/categoria/:id`}>
                 <NavDropdown.Item href="categoria/:id">Ação</NavDropdown.Item>
               </Link>

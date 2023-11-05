@@ -57,7 +57,7 @@ main {
   .login-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
-    color: #03e9f4;
+    color: var(--cor4);
     font-size: 12px;
   }
   
@@ -65,7 +65,7 @@ main {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #03e9f4;
+    color: var(--cor4);
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -78,7 +78,7 @@ main {
 .login-box form button {
     position: relative;
     padding: 10px 20px;
-    color: #03e9f4;
+    color: var(--cor4);
     font-size: 16px;
     overflow: hidden;
     transition: .5s;

@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login/index.jsx";
 import Header from "./components/Header/index.jsx";
+import Footer from "./components/Footer/index.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/carrinho" />
         <Route path="/:jogo" />
       </Routes>
+      <Footer />
     </>
   );
 }
