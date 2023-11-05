@@ -22,3 +22,14 @@
   color: rgb(250, 237, 237);
   backdrop-filter: blur(10px);
 }
+
+.login-link {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 7vw;
+}
+
+Nav-link {
+
+}

@@ -35,7 +35,7 @@ function Login() {
               required=""
               onChange={(e) => setLogin(e.target.value)}
             />
-            <label>Nome </label>
+            <label class="label">Nome</label>
           </div>
           <div className="user-box">
             <input
@@ -44,7 +44,7 @@ function Login() {
               required=""
               onChange={(e) => setSenha(e.target.value)}
             />
-            <label>Senha </label>
+            <label class="label">Senha</label>
           </div>
           <button type="button" onClick={entrar}>
             Entrar

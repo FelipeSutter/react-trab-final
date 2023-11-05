@@ -42,7 +42,7 @@ main {
     outline: none;
     background: transparent;
   }
-  .login-box .user-box label {
+.label {
     position: absolute;
     top:0;
     left: 0;
