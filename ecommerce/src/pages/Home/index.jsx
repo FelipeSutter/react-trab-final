@@ -40,38 +40,41 @@ export default function Home() {
           <section id="destaques">
             <h2>Destaques</h2>
              <div className="grid-container">
-               <Link  className="conteudo-maior">
                 {jogosDestaque[0] && (
+                  <Link  className="conteudo-maior container-destaque">
                   <img
                     className="img-destaque"
                     src={jogosDestaque[0].imagem}
                     alt=""
                   />
+                  <p>{jogosDestaque[0].titulo}</p>
+                  </Link>
                 )}
-              </Link>
-              <Link   className="conteudo-menor">
-                {jogosDestaque[1] && (
+              {jogosDestaque[0] && (
+                  <Link  className="conteudo-menor container-destaque">
                   <img
                     className="img-destaque"
                     src={jogosDestaque[1].imagem}
                     alt=""
                   />
+                  <p>{jogosDestaque[1].titulo}</p>
+                  </Link>
                 )}
-              </Link>
-              <Link   className="conteudo-menor">
-                {jogosDestaque[2] && (
+              {jogosDestaque[0] && (
+                  <Link  className="conteudo-menor container-destaque">
                   <img
                     className="img-destaque"
                     src={jogosDestaque[2].imagem}
                     alt=""
                   />
-                  )}
-              </Link>
+                  <p>{jogosDestaque[2].titulo}</p>
+                  </Link>
+                )}
             </div> 
           </section>
 
           <section id="categorias">
-            <Categoria categoria={"acao"} jogos={jogos} />
+            <Categoria categoria={"ação"} jogos={jogos} />
             <Categoria categoria={"puzzle"} jogos={jogos} />
             <Categoria categoria={"fps"} jogos={jogos} />
           </section>
