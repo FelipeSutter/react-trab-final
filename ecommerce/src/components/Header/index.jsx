@@ -48,8 +48,8 @@ function Header() {
                 </NavDropdown.Item>
               </Link>
             </NavDropdown>
-            <Link to={"/sobrenos"}>
-              <Nav.Link href="/sobrenos">Sobre Nós</Nav.Link>
+            <Link to={"/about"}>
+              <Nav.Link href="/about">Sobre Nós</Nav.Link>
             </Link>
             <Link to={"/login"} className="login-link">
               <Nav.Link href="/login">Faça Login</Nav.Link>

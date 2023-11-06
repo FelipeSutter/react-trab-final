@@ -23,7 +23,7 @@ main {
 .login-box h2 {
   margin: 0 0 30px;
   padding: 0;
-  color: #fff;
+  color: var(--cor1);
   text-align: center;
 }
 
@@ -35,10 +35,10 @@ main {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: var(--cor1);
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--cor1);
   outline: none;
   background: transparent;
 }
@@ -48,18 +48,10 @@ main {
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: var(--cor1);
   pointer-events: none;
   transition: 0.5s;
 }
-
-/* input:focus ~ label, input:valid ~ label
- {
-  top: -20px;
-  left: 0;
-  color: var(--cor4);
-  font-size: 12px;
-} */
 
 .login-box form a {
   position: relative;
@@ -90,7 +82,7 @@ main {
 
 .login-box button:hover {
   background: #03e9f4;
-  color: #fff;
+  color: var(--cor1);
   border-radius: 5px;
   box-shadow: 0 0 20px #03e9f4;
 }

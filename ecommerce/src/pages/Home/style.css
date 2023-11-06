@@ -27,7 +27,6 @@ main {
 }
 
 #inicio {
-  z-index: 0;
   height: 50vh;
   display: flex;
   align-items: center;
@@ -64,42 +63,42 @@ h2 {
   overflow: hidden;
 }
 
-.img-destaque {
+.img-destaque{
   min-width: 100%;
   min-height: 100%;
-  transition: ease-in 0.2s;
+  transition: ease-in .2s;
 }
 
-.img-destaque:hover {
+.img-destaque:hover{
   transform: scale(1.1);
 }
 
-#destaques {
-  text-align: center;
-  padding: 0 5vw;
+#destaques{
+    text-align: center;
+    padding: 0 5vw;
 }
 
-#destaques h2 {
+#destaques h2{
   color: var(--cor4);
 }
 
-#categorias {
-  padding: 50px 10vw;
+#categorias{
+    padding: 50px 10vw;
 }
 
 @media (max-width: 768px) {
-  .grid-container {
+  .grid-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 80vw;
   }
 
-  .conteudo-maior {
+  .conteudo-maior{
     width: 80vw;
   }
 
-  .conteudo-menor {
+  .conteudo-menor{
     width: 38vw;
     height: 150px;
   }

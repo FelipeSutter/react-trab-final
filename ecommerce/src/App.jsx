@@ -6,6 +6,7 @@ import Login from "./pages/Login/index.jsx";
 import Header from "./components/Header/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 import Categorias from "./pages/Categoria/index.jsx";
+import About from "./pages/AboutUs/index.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/categoria/:categoria" element={<Categorias />} />
         <Route path="/contato" />
+        <Route path="/about" element={<About />} />
         <Route path="/carrinho" />
         <Route path="/:jogo" />
       </Routes>
