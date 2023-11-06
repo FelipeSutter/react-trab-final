@@ -8,14 +8,21 @@ function Cadastro() {
   const [login, setLogin] = useState("");
   const [confirmaLogin, setConfirmaLogin] = useState("");
   const [senha, setSenha] = useState("");
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
   const entrar = () => {
     if (login == "" || confirmaLogin == "" || senha == "") {
-      alert("Há campos vazios.");
+      setError("Há campos vazios.");
+      setTimeout(() => {
+        setError("");
+      }, 2000);
     } else if (login != confirmaLogin) {
-      alert("Os campos de Nome e Confirmar nome devem ser iguais.");
+      setError("Os campos de nome devem ser iguais.");
+      setTimeout(() => {
+        setError("");
+      }, 2000);
     } else {
       const infos = {
         login: login,
@@ -33,6 +40,8 @@ function Cadastro() {
       <div className="login-box">
         <h2>Cadastre-se</h2>
         <form>
+          <p className="error-msg">{error}</p>
+
           <div className="user-box">
             <Input
               type="text"
