@@ -3,13 +3,24 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./style.css";
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoPersonCircleOutline } from "react-icons/io5";
 
 function Header() {
   const navigate = useNavigate();
 
-  const { login } = JSON.parse(localStorage.getItem("infos"));
+  const armazenamento = localStorage.getItem("infos");
+
+  let login;
+
+  if (armazenamento != null) {
+    login = JSON.parse(localStorage.getItem("infos")).login;
+  } else {
+    useEffect(() => {
+      navigate(`/cadastro`);
+    }, []);
+  }
 
   const cat = (categoria) => {
     navigate("/categoria/" + categoria);
@@ -54,10 +65,9 @@ function Header() {
             <Link to={"/about"}>
               <Nav.Link href="/about">Sobre Nós</Nav.Link>
             </Link>
-            <Link to={"/login"} className="login-link">
-              <Nav.Link href="/login">Olá {login}</Nav.Link>
-              <IoPersonCircleOutline />
-            </Link>
+            <Nav.Item href="/login" className="login-name">
+              Seja bem-vindo(a), {login}!
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>

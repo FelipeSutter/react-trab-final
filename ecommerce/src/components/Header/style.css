@@ -23,9 +23,10 @@
   backdrop-filter: blur(10px);
 }
 
-.login-link {
+.login-name {
   display: flex;
   align-items: center;
   position: absolute;
   right: 7vw;
+  margin-top: 7px;
 }
