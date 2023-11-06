@@ -8,6 +8,9 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 
 function Header() {
   const navigate = useNavigate();
+
+  const { login } = JSON.parse(localStorage.getItem("infos"));
+
   const cat = (categoria) => {
     navigate("/categoria/" + categoria);
   };
@@ -15,14 +18,14 @@ function Header() {
   return (
     <Navbar expand="lg" className="header-color" sticky="top">
       <Container>
-        <Link to={"/"}>
-          <Navbar.Brand href="/">Game Hub</Navbar.Brand>
+        <Link to={"/home"}>
+          <Navbar.Brand href="/home">Game Hub</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" variant="underline">
-            <Link to={"/"}>
-              <Nav.Link href="/">Home</Nav.Link>
+            <Link to={"/home"}>
+              <Nav.Link href="/home">Home</Nav.Link>
             </Link>
             <Link to={"/contato"}>
               <Nav.Link href="/contato">Contato</Nav.Link>
@@ -52,7 +55,7 @@ function Header() {
               <Nav.Link href="/about">Sobre Nós</Nav.Link>
             </Link>
             <Link to={"/login"} className="login-link">
-              <Nav.Link href="/login">Faça Login</Nav.Link>
+              <Nav.Link href="/login">Olá {login}</Nav.Link>
               <IoPersonCircleOutline />
             </Link>
           </Nav>

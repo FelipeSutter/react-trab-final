@@ -27,6 +27,11 @@
   position: relative;
 }
 
+.login-box span {
+  font-size: 8px;
+  text-align:left;
+}
+
 .login-box .user-box input {
   width: 100%;
   padding: 10px 0;
@@ -52,15 +57,18 @@
 .login-box form a {
   position: relative;
   display: inline-block;
-  padding: 10px 20px;
   color: var(--cor4);
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
-  margin-top: 40px;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.login-box form a:hover {
+  color: var(--cor1);
 }
 
 .login-box form button {

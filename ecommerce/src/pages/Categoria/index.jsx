@@ -5,6 +5,8 @@ import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import Background from "../../components/Background";
 import "./style.css";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function Categorias() {
   const [jogos, setJogos] = useState([]);
@@ -26,47 +28,51 @@ export default function Categorias() {
   }, []);
 
   return (
-    <main>
-      <Background />
-      <div className="categ">
-        <section id="destaques">
-          <div className="titulo">
-            <h1>{categoria}</h1>
-          </div>
-          <div className="grid-container">
-            <Link className="conteudo-maior">
-              {jogosDestaque[0] && (
-                <img
-                  className="img-destaque"
-                  src={jogosDestaque[0].imagem}
-                  alt=""
-                />
-              )}
-            </Link>
-            <Link className="conteudo-menor">
-              {jogosDestaque[1] && (
-                <img
-                  className="img-destaque"
-                  src={jogosDestaque[1].imagem}
-                  alt=""
-                />
-              )}
-            </Link>
-            <Link className="conteudo-menor">
-              {jogosDestaque[2] && (
-                <img
-                  className="img-destaque"
-                  src={jogosDestaque[2].imagem}
-                  alt=""
-                />
-              )}
-            </Link>
-          </div>
-        </section>
-        <section id="categorias">
-          <Categoria categoria={categoria} jogos={jogos} />
-        </section>
-      </div>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Background />
+        <div className="categ">
+          <section id="destaques">
+            <div className="titulo">
+              <h1>{categoria}</h1>
+            </div>
+            <div className="grid-container">
+              <Link className="conteudo-maior">
+                {jogosDestaque[0] && (
+                  <img
+                    className="img-destaque"
+                    src={jogosDestaque[0].imagem}
+                    alt=""
+                  />
+                )}
+              </Link>
+              <Link className="conteudo-menor">
+                {jogosDestaque[1] && (
+                  <img
+                    className="img-destaque"
+                    src={jogosDestaque[1].imagem}
+                    alt=""
+                  />
+                )}
+              </Link>
+              <Link className="conteudo-menor">
+                {jogosDestaque[2] && (
+                  <img
+                    className="img-destaque"
+                    src={jogosDestaque[2].imagem}
+                    alt=""
+                  />
+                )}
+              </Link>
+            </div>
+          </section>
+          <section id="categorias">
+            <Categoria categoria={categoria} jogos={jogos} />
+          </section>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

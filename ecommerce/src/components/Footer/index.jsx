@@ -1,6 +1,6 @@
 import "./style.css";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.png";
 
 function Footer() {
   return (
@@ -12,10 +12,10 @@ function Footer() {
         <h2>
           <strong>Navegue pela página</strong>
         </h2>
-        <Link to={"/"}>Home</Link>
+        <Link to={"/home"}>Home</Link>
         <Link to={"/contato"}>Contato</Link>
         <Link to={"/about"}>Sobre nós</Link>
-        <Link to={"/login"}>Login</Link>
+        <Link to={"/"}>Login</Link>
       </div>
       <div className="column side">
         <h2>

@@ -8,14 +8,16 @@ import Footer from "./components/Footer";
 import Categorias from "./pages/Categoria";
 import About from "./pages/AboutUs";
 import Jogo from "./pages/Jogos";
+import Cadastro from "./pages/Cadastro";
 
 function App() {
   return (
     <>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:usuario" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/home/:usuario" element={<Home />} />
+        <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/login" element={<Login />} />
         <Route path="/categoria/:categoria" element={<Categorias />} />
         <Route path="/contato" />
@@ -23,7 +25,6 @@ function App() {
         <Route path="/carrinho" />
         <Route path="/jogo" element={<Jogo />} />
       </Routes>
-      <Footer />
     </>
   );
 }

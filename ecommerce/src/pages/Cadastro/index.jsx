@@ -4,25 +4,26 @@ import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import Input from "../../components/Input_Login";
 
-function Login() {
+function Cadastro() {
   const [login, setLogin] = useState("");
+  const [confirmaLogin, setConfirmaLogin] = useState("");
   const [senha, setSenha] = useState("");
 
   const navigate = useNavigate();
 
-  const loginDefinido = JSON.parse(localStorage.getItem("infos")).login;
-  const senhaDefinida = JSON.parse(localStorage.getItem("infos")).senha;
-
-  console.log(loginDefinido);
-  console.log(senhaDefinida);
-
   const entrar = () => {
-    if (login == "" || senha == "") {
+    if (login == "" || confirmaLogin == "" || senha == "") {
       alert("Há campos vazios.");
-    } else if (login != loginDefinido || senha != senhaDefinida) {
-      alert("Nome ou senha inválidos.");
+    } else if (login != confirmaLogin) {
+      alert("Os campos de Nome e Confirmar nome devem ser iguais.");
     } else {
-      navigate(`/home/${login}`);
+      const infos = {
+        login: login,
+        confirmaLogin: confirmaLogin,
+        senha: senha,
+      };
+      localStorage.setItem("infos", JSON.stringify(infos));
+      navigate(`/`);
     }
   };
 
@@ -30,7 +31,7 @@ function Login() {
     <main>
       <Background />
       <div className="login-box">
-        <h2>Login</h2>
+        <h2>Cadastre-se</h2>
         <form>
           <div className="user-box">
             <Input
@@ -42,17 +43,25 @@ function Login() {
           </div>
           <div className="user-box">
             <Input
+              type="text"
+              value={confirmaLogin}
+              setValue={setConfirmaLogin}
+              label={"Confirmar nome"}
+            />
+          </div>
+          <div className="user-box">
+            <Input
               type="password"
               value={senha}
               setValue={setSenha}
               label={"Senha"}
             />
           </div>
-          <Link to={"/cadastro"}>
-            <span>Não tem uma conta? Cadastre-se!</span>
+          <Link to={"/"}>
+            <span>Já tem uma conta? Clique aqui!</span>
           </Link>
           <button type="button" onClick={entrar}>
-            Entrar
+            Continuar
           </button>
         </form>
       </div>
@@ -60,4 +69,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Cadastro;
