@@ -9,6 +9,7 @@ import Categorias from "./pages/Categoria";
 import About from "./pages/AboutUs";
 import Jogo from "./pages/Jogos";
 import Cadastro from "./pages/Cadastro";
+import Contatos from "./pages/Contatos";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/login" element={<Login />} />
         <Route path="/categoria/:categoria" element={<Categorias />} />
-        <Route path="/contato" />
+        <Route path="/contato" element={<Contatos />} />
         <Route path="/about" element={<About />} />
         <Route path="/carrinho" />
         <Route path="/jogo/:id" element={<Jogo />} />
