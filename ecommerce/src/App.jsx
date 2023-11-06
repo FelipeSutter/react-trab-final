@@ -24,7 +24,7 @@ function App() {
         <Route path="/contato" />
         <Route path="/about" element={<About />} />
         <Route path="/carrinho" />
-        <Route path="/jogo" element={<Jogo />} />
+        <Route path="/jogo/:id" element={<Jogo />} />
       </Routes>
     </>
   );

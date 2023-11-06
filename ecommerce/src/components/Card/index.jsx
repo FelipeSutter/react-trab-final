@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 function Card({ jogo }) {
   return (
-    <Link className="card-jogo">
+    <Link to={`/jogo/${jogo.id}`} className="card-jogo">
       <div className="img-container">
         <img className="img-jogo" src={jogo.imagem} alt="" />
       </div>

@@ -28,8 +28,6 @@ export default function Home() {
     getJogos();
   }, []);
 
-  console.log(jogosDestaque);
-
   return (
     <>
       <Header />
@@ -41,8 +39,8 @@ export default function Home() {
           </section>
           <section id="destaques">
             <h2>Destaques</h2>
-            <div className="grid-container">
-              <Link className="conteudo-maior">
+             <div className="grid-container">
+               <Link  className="conteudo-maior">
                 {jogosDestaque[0] && (
                   <img
                     className="img-destaque"
@@ -51,7 +49,7 @@ export default function Home() {
                   />
                 )}
               </Link>
-              <Link className="conteudo-menor">
+              <Link   className="conteudo-menor">
                 {jogosDestaque[1] && (
                   <img
                     className="img-destaque"
@@ -60,16 +58,16 @@ export default function Home() {
                   />
                 )}
               </Link>
-              <Link className="conteudo-menor">
+              <Link   className="conteudo-menor">
                 {jogosDestaque[2] && (
                   <img
                     className="img-destaque"
                     src={jogosDestaque[2].imagem}
                     alt=""
                   />
-                )}
+                  )}
               </Link>
-            </div>
+            </div> 
           </section>
 
           <section id="categorias">
