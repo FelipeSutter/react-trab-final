@@ -3,6 +3,8 @@ import axios from "axios";
 import "./style.css";
 import Categoria from "../../components/Categoria";
 import { Link } from "react-router-dom";
+import Background from "../../components/Background";
+import logo from "../../assets/logo.png"
 
 export default function Home() {
   const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos";
@@ -28,12 +30,10 @@ export default function Home() {
 
   return (
     <main>
-      <div className="background">
-        <div className="gradiente"></div>
-      </div>
+      <Background />
       <div>
         <section id="inicio">
-          <h1>Logo?</h1>
+          <img src={logo} alt="" />
         </section>
         <section id="destaques">
           <h2>Destaques</h2>

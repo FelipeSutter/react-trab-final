@@ -16,6 +16,16 @@
     color: var(--cor1);
 }
 
+.column.side.left{
+  display: flex;
+  justify-content: center;
+}
+
+.column img{
+  width: 300px;
+  margin: auto;
+}
+
 .logo-img {
     float: left;
     position: relative;

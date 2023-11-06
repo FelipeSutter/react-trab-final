@@ -2,11 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
-import Login from "./pages/Login/index.jsx";
-import Header from "./components/Header/index.jsx";
-import Footer from "./components/Footer/index.jsx";
-import Categorias from "./pages/Categoria/index.jsx";
-import About from "./pages/AboutUs/index.jsx";
+import Login from "./pages/Login";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Categorias from "./pages/Categoria";
+import About from "./pages/AboutUs";
 
 function App() {
   return (

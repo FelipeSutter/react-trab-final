@@ -1,16 +1,12 @@
 import "./style.css";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png"
 
 function Footer() {
   return (
     <footer className="row">
-      <div className="column side">
-        <h2>
-          <strong>Copyright Game Hub</strong>
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ullam.
-        </p>
+      <div className="column side left">
+        <img src={logo} alt="" />
       </div>
       <div className="column middle">
         <h2>

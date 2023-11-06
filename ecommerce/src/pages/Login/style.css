@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-main {
-  height: 100vh;
-}
-
 .login-box {
   position: absolute;
   top: 50%;

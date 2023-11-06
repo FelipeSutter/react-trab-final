@@ -8,7 +8,7 @@
   background-color: #131317;
 
   --cor1: #dedede;
-  --cor2: #1e1d1d;
+  --cor2: #1a1818;
   --cor3: #112a39;
   --cor4: #088dbc;
 
@@ -19,6 +19,20 @@
   -webkit-text-size-adjust: 100%;
 }
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 100vh;
+}
+
+body{
+  background-color: var(--cor2);
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -26,10 +40,6 @@ a {
 }
 a:hover {
   color: var(--cor4)
-}
-
-body {
-  min-height: fit-content;
 }
 
 h1 {
@@ -48,9 +58,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
