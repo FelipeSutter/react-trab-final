@@ -5,25 +5,27 @@ import Background from "../../components/Background";
 import "./style.css";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import { useParams } from "react-router-dom";
 
-export default function Jogo(id) {
-  const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos";
-  // const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos" + {id};
+export default function Jogo() {
+  const { id } = useParams();
+  // const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos";
+  const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos/";
   const [jogo, setJogo] = useState(null);
 
+  console.log(id);
+  console.log(useParams());
   const getJogo = async () => {
     try {
-      const { data } = await axios.get(url);
-      if (data.length > 0) {
-        setJogo(data[0]);
-      }
+      const { data } = await axios.get(url + id);
+      setJogo(data);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    getJogo();
+    getJogo({ id });
   }, []);
 
   return (
