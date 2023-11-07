@@ -5,11 +5,11 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #131317;
+  color: var(--cor1);
+  background-color: var(--cor2);
 
   --cor1: #dedede;
-  --cor2: #1a1818;
+  --cor2: #17181e;
   --cor3: #112a39;
   --cor4: #088dbc;
 
