@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BsSun, BsMoonFill } from "react-icons/bs";
-
+import CartPopup from "../Carrinho";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
@@ -16,6 +16,16 @@ function Header() {
   const [categorias, setCategorias] = useState([]);
 
   const { theme, toggleTheme } = useContext(ThemeContext);
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const openCart = () => {
+    setIsCartOpen(true);
+  };
+
+  const closeCart = () => {
+    setIsCartOpen(false);
+  };
 
   const getJogos = async () => {
     try {
@@ -59,52 +69,56 @@ function Header() {
   };
 
   return (
-    <Navbar expand="lg" className="header-color" sticky="top">
-      <Container>
-        <Link to="/home">
-          <Navbar.Brand href="/home">Game Hub</Navbar.Brand>
-        </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto" variant="underline">
-            <Link to="/home">
-              <Nav.Link href="/home">Home</Nav.Link>
-            </Link>
-            <Link to="/contato">
-              <Nav.Link href="/contato">Contato</Nav.Link>
-            </Link>
-            <NavDropdown
-              title="Categorias"
-              id="basic-nav-dropdown"
-              menuVariant="dark"
-            >
-              {categorias.map((categoria) => (
-                <NavDropdown.Item
-                  key={categoria}
-                  onClick={() => cat(categoria)}
-                >
-                  <Link to={`/categorias/${categoria}`}>{categoria}</Link>
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
-            <Link to="/about">
-              <Nav.Link href="/about">Sobre Nós</Nav.Link>
-            </Link>
+    <>
+      <Navbar expand="lg" className="header-color" sticky="top">
+        <Container>
+          <Link to="/home">
+            <Navbar.Brand href="/home">Game Hub</Navbar.Brand>
+          </Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto" variant="underline">
+              <Link to="/home">
+                <Nav.Link href="/home">Home</Nav.Link>
+              </Link>
+              <Link to="/contato">
+                <Nav.Link href="/contato">Contato</Nav.Link>
+              </Link>
+              <NavDropdown
+                title="Categorias"
+                id="basic-nav-dropdown"
+                menuVariant="dark"
+              >
+                {categorias.map((categoria) => (
+                  <NavDropdown.Item
+                    key={categoria}
+                    onClick={() => cat(categoria)}
+                  >
+                    <Link to={`/categorias/${categoria}`}>{categoria}</Link>
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+              <Link to="/about">
+                <Nav.Link href="/about">Sobre Nós</Nav.Link>
+              </Link>
 
-            <Nav.Item href="/login" className="login-name">
-              Seja bem-vindo(a), {login}!
-            </Nav.Item>
-            <button
-              onClick={toggleTheme}
-              className="botao-tema"
-              style={buttonStyle}
-            >
-              {theme === "light" ? <BsSun /> : <BsMoonFill />}
-            </button>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+              <Nav.Item href="/login" className="login-name">
+                Seja bem-vindo(a), {login}!
+              </Nav.Item>
+              <button
+                onClick={toggleTheme}
+                className="botao-tema"
+                style={buttonStyle}
+              >
+                {theme === "light" ? <BsSun /> : <BsMoonFill />}
+              </button>
+              <button onClick={openCart}>Open Cart</button>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <CartPopup isOpen={isCartOpen} onClose={closeCart} />
+    </>
   );
 }
 
