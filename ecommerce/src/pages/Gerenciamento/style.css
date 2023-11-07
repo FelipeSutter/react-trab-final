@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  max-width: 1000px;
+  max-width: 90%;
   padding: 40px;
   margin: 50px auto;
   text-align: center;

@@ -15,7 +15,6 @@ const Gerenciador = ({ isOpen, onClose, onSubmit, initialValues }) => {
   const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos/";
 
   const openForm = (game) => {
-    console.log("Opening form");
     setSelectedGame(game);
     setIsFormOpen(true);
   };
@@ -26,7 +25,7 @@ const Gerenciador = ({ isOpen, onClose, onSubmit, initialValues }) => {
   };
 
   const handleFormSubmit = async (formData) => {
-    console.log(typeof formData.id);
+    //console.log(typeof formData.id);
     try {
       if (formData.id) {
         try {
@@ -35,16 +34,15 @@ const Gerenciador = ({ isOpen, onClose, onSubmit, initialValues }) => {
         } catch (error) {
           console.error(error);
         }
-        console.log("Game updated successfully:", formData);
       } else {
         console.log(formData);
         const response = await axios.post(url, formData);
-        console.log("Game added successfully:", response.data);
+        console.log(response.data);
       }
       getJogos();
       closeForm();
     } catch (error) {
-      console.log("Erro:", error);
+      console.error(error);
     }
   };
 
@@ -61,10 +59,10 @@ const Gerenciador = ({ isOpen, onClose, onSubmit, initialValues }) => {
   const deleteJogo = async (id) => {
     try {
       const response = await axios.delete(`${url}/${id}`);
-      console.log(`Game with ID ${id} deleted successfully`);
+      console.log(`ID: ${id} deletado`);
       getJogos();
     } catch (error) {
-      console.error(`Error deleting game with ID ${id}:`, error);
+      console.error(`Erro deletando o jogo de ID: ${id}:`, error);
     }
   };
 
