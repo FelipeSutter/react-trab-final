@@ -15,11 +15,15 @@
   <ul>
     <li>Background</li>
     <li>Card</li>
-    <li>Categoria</li>
+    <li>ListaCateg</li>
+    <li>ContactForm</li>
+    <li>GameForm</li>
+    <li>Switch</li>
     <li>Header</li>
     <li>Footer</li>
     <li>ImgAbout</li>
     <li>Input_Login</li>
+    <li>ThemeContext</li>
   </ul>
 <h2>Páginas do projeto</h2>
   <ul>
@@ -30,6 +34,7 @@
     <li>Jogos</li>
     <li>Login</li>
     <li>Contato</li>
+    <li>Gerenciamento</li>
   </ul>
 <h2>Tecnologias Utilizadas</h2>
 
