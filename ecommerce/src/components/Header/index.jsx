@@ -7,9 +7,14 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
+
 function Header() {
   const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos";
   const [categorias, setCategorias] = useState([]);
+  
+  const{theme, toggleTheme} = useContext(ThemeContext)
 
   const getJogos = async () => {
     try {
@@ -75,9 +80,11 @@ function Header() {
             <Link to="/about">
               <Nav.Link href="/about">Sobre Nós</Nav.Link>
             </Link>
+            
             <Nav.Item href="/login" className="login-name">
               Seja bem-vindo(a), {login}!
             </Nav.Item>
+            <button onClick={toggleTheme} className="botao-tema">{theme}</button>
           </Nav>
         </Navbar.Collapse>
       </Container>

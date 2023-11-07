@@ -28,7 +28,22 @@
   display: flex;
   align-items: center;
   position: absolute;
-  right: 7vw;
-  margin-top: 7px;
+  right: 15%;
+  top: 50%;
+  transform: translateY(-50%);
   pointer-events: none;
+}
+
+.botao-tema{
+  background-color: var(--cor3);
+  border-radius: 20px;
+  text-transform: uppercase;
+  padding: 2px 10px ;
+}
+
+@media (max-width: 1000px) {
+  .login-name {
+    position: inherit;
+    justify-content: center;
+  }
 }

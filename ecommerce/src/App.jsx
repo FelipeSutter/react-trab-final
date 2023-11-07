@@ -11,10 +11,13 @@ import Jogo from "./pages/Jogos";
 import Cadastro from "./pages/Cadastro";
 import Contatos from "./pages/Contatos";
 import Gerenciamento from "./pages/Gerenciamento";
+import { useContext } from "react";
+import { ThemeContext } from "./context/ThemeContext";
 
 function App() {
+  const {theme} = useContext(ThemeContext)
   return (
-    <>
+    <div className={`App ${theme === "light" ? "light-theme" : ""}`}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="*" element={<Login />} />
@@ -29,7 +32,7 @@ function App() {
         <Route path="/jogo/:id" element={<Jogo />} />
         <Route path="/gerenciar" element={<Gerenciamento />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
