@@ -9,7 +9,7 @@
   margin: auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 990px) {
   .cards-categoria {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
@@ -17,7 +17,7 @@
 
 @media (max-width: 480px) {
   .cards-categoria {
-    grid-template-columns: repeat(1, minmax(300px, max-content));
+    grid-template-columns: repeat(1, minmax(250px, max-content));
   }
 }
 
