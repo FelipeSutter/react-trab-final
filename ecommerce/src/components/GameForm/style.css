@@ -1,29 +1,46 @@
-.modal-content {
+.form-modal {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-  width: 80%;
-  max-width: 600px;
-  overflow-y: auto;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  overflow-y: hidden !important;
 }
 
-.modal-content label {
+.form-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 10% !important;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 600px;
+  height: 68vh !important;
+  max-height: calc(100% - 40px) !important;
+  overflow-y: auto;
+  background-color: black !important;
+  color: white;
+}
+
+.form-modal-content label {
   text-align: left;
   width: 100%;
   margin-bottom: 5px;
+  color: #ccc !important;
 }
 
-.modal-content input[type="text"],
-.modal-content textarea {
-  width: calc(100% - 20px); /* Adjust the width as needed */
+.form-modal-content input[type="text"],
+.form-modal-content textarea,
+.form-modal-content select {
+  width: calc(100% - 20px);
   padding: 10px;
   margin-bottom: 15px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc !important;
   border-radius: 5px;
 }
 
