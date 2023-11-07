@@ -6,6 +6,7 @@ import "./style.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { BsSun, BsMoonFill } from "react-icons/bs";
 
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
@@ -13,17 +14,26 @@ import { ThemeContext } from "../../context/ThemeContext";
 function Header() {
   const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos";
   const [categorias, setCategorias] = useState([]);
-  
-  const{theme, toggleTheme} = useContext(ThemeContext)
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const getJogos = async () => {
     try {
       const { data } = await axios.get(url);
-      const categoriasApi = [...new Set(data.map((objeto) => objeto.categoria))];
+      const categoriasApi = [
+        ...new Set(data.map((objeto) => objeto.categoria)),
+      ];
       setCategorias(categoriasApi);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const buttonStyle = {
+    backgroundColor: theme === "light" ? "black" : "black",
+    padding: "10px",
+    border: "none",
+    cursor: "pointer",
   };
 
   useEffect(() => {
@@ -73,18 +83,24 @@ function Header() {
                   key={categoria}
                   onClick={() => cat(categoria)}
                 >
-                  <Link to={`/categorias/${categoria}`} >{categoria}</Link>
+                  <Link to={`/categorias/${categoria}`}>{categoria}</Link>
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
             <Link to="/about">
               <Nav.Link href="/about">Sobre Nós</Nav.Link>
             </Link>
-            
+
             <Nav.Item href="/login" className="login-name">
               Seja bem-vindo(a), {login}!
             </Nav.Item>
-            <button onClick={toggleTheme} className="botao-tema">{theme}</button>
+            <button
+              onClick={toggleTheme}
+              className="botao-tema"
+              style={buttonStyle}
+            >
+              {theme === "light" ? <BsSun /> : <BsMoonFill />}
+            </button>
           </Nav>
         </Navbar.Collapse>
       </Container>
