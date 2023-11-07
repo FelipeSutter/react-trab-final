@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
-import Categoria from "../../components/Categoria";
+import Categoria from "../../components/ListaCateg";
 import { Link } from "react-router-dom";
 import Background from "../../components/Background";
 import logo from "../../assets/logo.png";
@@ -41,39 +41,48 @@ export default function Home() {
           </section>
           <section id="destaques">
             <h2>Destaques</h2>
-            
-             <div className="grid-container">
-                {jogosDes[1] && (
-                  <Link to={`/jogo/${jogosDes[1].id}`}  className="conteudo-maior container-destaque">
+
+            <div className="grid-container">
+              {jogosDes[1] && (
+                <Link
+                  to={`/jogo/${jogosDes[1].id}`}
+                  className="conteudo-maior container-destaque"
+                >
                   <img
                     className="img-destaque"
                     src={jogosDes[1].imagem}
                     alt=""
                   />
                   <p>{jogosDes[1].titulo}</p>
-                  </Link>
-                )}
+                </Link>
+              )}
               {jogosDes[0] && (
-                  <Link to={`/jogo/${jogosDes[0].id}`}  className="conteudo-menor container-destaque">
+                <Link
+                  to={`/jogo/${jogosDes[0].id}`}
+                  className="conteudo-menor container-destaque"
+                >
                   <img
                     className="img-destaque"
                     src={jogosDes[0].imagem}
                     alt=""
                   />
                   <p>{jogosDes[0].titulo}</p>
-                  </Link>
-                )}
+                </Link>
+              )}
               {jogosDes[2] && (
-                  <Link to={`/jogo/${jogosDes[2].id}`}  className="conteudo-menor container-destaque">
+                <Link
+                  to={`/jogo/${jogosDes[2].id}`}
+                  className="conteudo-menor container-destaque"
+                >
                   <img
                     className="img-destaque"
                     src={jogosDes[2].imagem}
                     alt=""
                   />
                   <p>{jogosDes[2].titulo}</p>
-                  </Link>
-                )}
-            </div> 
+                </Link>
+              )}
+            </div>
           </section>
 
           <section id="categorias">

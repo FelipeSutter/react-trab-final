@@ -33,17 +33,34 @@ export default function Jogo() {
       <Header />
       <main>
         <Background />
-        <div className="jogo">
-          <h1>Game Page</h1>
-          {jogo && (
-            <div className="game-card">
-              <img src={jogo.imagem} alt={jogo.titulo} />
-              <h2>{jogo.titulo}</h2>
-              <p>Categoria: {jogo.categoria}</p>
-              <p>Preço: {jogo.preco}</p>
+        {jogo && (
+          <div className="game-container">
+            <h2>{jogo.titulo}</h2>
+
+            <img src={jogo.imagem} alt={jogo.titulo} />
+
+            <div>
+              <p>
+                <strong>Categoria: </strong>
+                {jogo.categoria}
+              </p>
+              <p>
+                <strong>Descrição: </strong>
+                {jogo.descricao}
+              </p>
+              <p>
+                <strong>Nota: </strong>
+                {jogo.avaliacao}
+              </p>
+              <p>
+                <strong>Preço: </strong>
+                R$ {jogo.preco}
+              </p>
             </div>
-          )}
-        </div>
+
+            <button>Comprar</button>
+          </div>
+        )}
       </main>
       <Footer />
     </>
