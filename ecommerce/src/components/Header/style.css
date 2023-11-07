@@ -53,3 +53,17 @@
     justify-content: center;
   }
 }
+
+.carrinho-btn{
+  background-color: transparent;
+  padding: 0 15px;
+}
+
+.icon-cart:hover{
+  color: var(--cor1);
+}
+
+.carrinho-btn:hover{
+  background-color: var(--cor4);
+  box-shadow: 0 0 20px var(--cor4);
+}

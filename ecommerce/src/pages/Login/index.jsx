@@ -23,8 +23,8 @@ function Login() {
   const storageAdmin = localStorage.getItem("admin");
 
   let entrar;
-
-  if (armazenamento != null || storageAdmin != null) {
+  
+  if (armazenamento != null) {
     const loginDefinido = JSON.parse(localStorage.getItem("infos")).login;
     const senhaDefinida = JSON.parse(localStorage.getItem("infos")).senha;
 
