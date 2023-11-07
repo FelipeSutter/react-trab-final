@@ -13,16 +13,32 @@ function Login() {
 
   const armazenamento = localStorage.getItem("infos");
 
+  const admin = {
+    login: "admin",
+    senha: "admin",
+  };
+
+  localStorage.setItem("admin", JSON.stringify(admin));
+
+  const storageAdmin = localStorage.getItem("admin");
+
   let entrar;
 
-  if (armazenamento != null) {
+  if (armazenamento != null || storageAdmin != null) {
     const loginDefinido = JSON.parse(localStorage.getItem("infos")).login;
     const senhaDefinida = JSON.parse(localStorage.getItem("infos")).senha;
+
+    const adminLogin = JSON.parse(localStorage.getItem("admin")).login;
+    const adminSenha = JSON.parse(localStorage.getItem("admin")).senha;
 
     console.log(loginDefinido);
     console.log(senhaDefinida);
 
     entrar = () => {
+      if (login == adminLogin && senha == adminSenha) {
+        navigate("/gerenciar");
+      }
+
       if (login == "" || senha == "") {
         setError("Há campos vazios.");
         setTimeout(() => {
