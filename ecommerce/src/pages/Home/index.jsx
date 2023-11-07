@@ -10,14 +10,16 @@ import Header from "../../components/Header";
 
 export default function Home() {
   const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos";
-  const [jogos, setJogos] = useState([]);
-  const jogosDestaque = jogos
-    .sort((a, b) => b.avaliacao - a.avaliacao)
-    .slice(0, 3);
+  const [jogos, setJogos] = useState([{}, {}, {}]);
+  const [jogosDes, setJogosDes] = useState([]);
 
   const getJogos = async () => {
     try {
       const { data } = await axios.get(url);
+      const jogosDestaque = data
+        .sort((a, b) => b.avaliacao - a.avaliacao)
+        .slice(0, 3);
+      setJogosDes(jogosDestaque);
       setJogos(data);
     } catch (error) {
       console.log(error);
@@ -39,35 +41,36 @@ export default function Home() {
           </section>
           <section id="destaques">
             <h2>Destaques</h2>
+            
              <div className="grid-container">
-                {jogosDestaque[0] && (
-                  <Link  className="conteudo-maior container-destaque">
+                {jogosDes[1] && (
+                  <Link to={`/jogo/${jogosDes[1].id}`}  className="conteudo-maior container-destaque">
                   <img
                     className="img-destaque"
-                    src={jogosDestaque[0].imagem}
+                    src={jogosDes[1].imagem}
                     alt=""
                   />
-                  <p>{jogosDestaque[0].titulo}</p>
+                  <p>{jogosDes[1].titulo}</p>
                   </Link>
                 )}
-              {jogosDestaque[0] && (
-                  <Link  className="conteudo-menor container-destaque">
+              {jogosDes[0] && (
+                  <Link to={`/jogo/${jogosDes[0].id}`}  className="conteudo-menor container-destaque">
                   <img
                     className="img-destaque"
-                    src={jogosDestaque[1].imagem}
+                    src={jogosDes[0].imagem}
                     alt=""
                   />
-                  <p>{jogosDestaque[1].titulo}</p>
+                  <p>{jogosDes[0].titulo}</p>
                   </Link>
                 )}
-              {jogosDestaque[0] && (
-                  <Link  className="conteudo-menor container-destaque">
+              {jogosDes[2] && (
+                  <Link to={`/jogo/${jogosDes[2].id}`}  className="conteudo-menor container-destaque">
                   <img
                     className="img-destaque"
-                    src={jogosDestaque[2].imagem}
+                    src={jogosDes[2].imagem}
                     alt=""
                   />
-                  <p>{jogosDestaque[2].titulo}</p>
+                  <p>{jogosDes[2].titulo}</p>
                   </Link>
                 )}
             </div> 
