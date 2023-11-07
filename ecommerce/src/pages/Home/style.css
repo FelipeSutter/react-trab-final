@@ -65,6 +65,11 @@ h2 {
   position: relative;
 }
 
+.container-destaque{
+  display: flex;
+  justify-content: center;
+}
+
 .container-destaque p{
   position: absolute;
   bottom: 0;

@@ -10,12 +10,16 @@ function Categoria({ jogos, categoria }) {
     <article className={categoria}>
       <div className="categoria-botao">
         <h2>{categoria}</h2>
-        <Link className="ver-mais" to={`/categoria/${categoria}`} onClick={() => {
-    window.scroll({
-      top: 0,
-      left: 0
-    });
-  }}>
+        <Link
+          className="ver-mais"
+          to={`/categoria/${categoria}`}
+          onClick={() => {
+            window.scroll({
+              top: 0,
+              left: 0,
+            });
+          }}
+        >
           Ver mais
         </Link>
       </div>
