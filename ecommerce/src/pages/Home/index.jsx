@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
-import Categoria from "../../components/Categoria";
+import Categoria from "../../components/ListaCateg";
 import { Link } from "react-router-dom";
 import Background from "../../components/Background";
 import logo from "../../assets/logo.png";
@@ -11,13 +11,15 @@ import Header from "../../components/Header";
 export default function Home() {
   const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos";
   const [jogos, setJogos] = useState([]);
-  const jogosDestaque = jogos
-    .sort((a, b) => b.avaliacao - a.avaliacao)
-    .slice(0, 3);
+  const [jogosDestaque, setJogosDestaque] = useState([]);
 
   const getJogos = async () => {
     try {
       const { data } = await axios.get(url);
+      const jogosPorAvaliacao = data
+        .sort((a, b) => b.avaliacao - a.avaliacao)
+        .slice(0, 3);
+      setJogosDestaque(jogosPorAvaliacao);
       setJogos(data);
     } catch (error) {
       console.log(error);
@@ -39,39 +41,52 @@ export default function Home() {
           </section>
           <section id="destaques">
             <h2>Destaques</h2>
-             <div className="grid-container">
-               <Link  className="conteudo-maior">
-                {jogosDestaque[0] && (
-                  <img
-                    className="img-destaque"
-                    src={jogosDestaque[0].imagem}
-                    alt=""
-                  />
-                )}
-              </Link>
-              <Link   className="conteudo-menor">
-                {jogosDestaque[1] && (
+
+            <div className="grid-container">
+              {jogosDestaque[1] && (
+                <Link
+                  to={`/jogo/${jogosDestaque[1].id}`}
+                  className="conteudo-maior container-destaque"
+                >
                   <img
                     className="img-destaque"
                     src={jogosDestaque[1].imagem}
                     alt=""
                   />
-                )}
-              </Link>
-              <Link   className="conteudo-menor">
-                {jogosDestaque[2] && (
+                  <p>{jogosDestaque[1].titulo}</p>
+                </Link>
+              )}
+              {jogosDestaque[0] && (
+                <Link
+                  to={`/jogo/${jogosDestaque[0].id}`}
+                  className="conteudo-menor container-destaque"
+                >
+                  <img
+                    className="img-destaque"
+                    src={jogosDestaque[0].imagem}
+                    alt=""
+                  />
+                  <p>{jogosDestaque[0].titulo}</p>
+                </Link>
+              )}
+              {jogosDestaque[2] && (
+                <Link
+                  to={`/jogo/${jogosDestaque[2].id}`}
+                  className="conteudo-menor container-destaque"
+                >
                   <img
                     className="img-destaque"
                     src={jogosDestaque[2].imagem}
                     alt=""
                   />
-                  )}
-              </Link>
-            </div> 
+                  <p>{jogosDestaque[2].titulo}</p>
+                </Link>
+              )}
+            </div>
           </section>
 
           <section id="categorias">
-            <Categoria categoria={"acao"} jogos={jogos} />
+            <Categoria categoria={"ação"} jogos={jogos} />
             <Categoria categoria={"puzzle"} jogos={jogos} />
             <Categoria categoria={"fps"} jogos={jogos} />
           </section>

@@ -6,6 +6,7 @@
     color: var(--cor1);
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     position: relative;
     max-width: 1000px;
     padding: 40px;

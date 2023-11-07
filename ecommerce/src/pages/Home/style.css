@@ -56,21 +56,38 @@ h2 {
 .conteudo-maior {
   grid-row: 1 / 3;
   overflow: hidden;
+  position: relative;
 }
 
 .conteudo-menor {
   grid-column: 2;
   overflow: hidden;
+  position: relative;
+}
+
+.container-destaque p{
+  position: absolute;
+  bottom: 0;
+  top:0;
+  width: 100%;
+  background: linear-gradient( #00000082,#000 );
+  margin: 0;
+  color: var(--cor1);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  opacity: 0;
+  transition: ease .4s;
+}
+
+.container-destaque p:hover{
+  opacity: 1;
 }
 
 .img-destaque{
-  min-width: 100%;
-  min-height: 100%;
+  height: 100%;
   transition: ease-in .2s;
-}
-
-.img-destaque:hover{
-  transform: scale(1.1);
 }
 
 #destaques{
