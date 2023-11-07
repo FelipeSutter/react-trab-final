@@ -10,6 +10,7 @@ import About from "./pages/AboutUs";
 import Jogo from "./pages/Jogos";
 import Cadastro from "./pages/Cadastro";
 import Contatos from "./pages/Contatos";
+import Gerenciamento from "./pages/Gerenciamento";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/carrinho" />
         <Route path="/jogo/:id" element={<Jogo />} />
+        <Route path="/gerenciar" element={<Gerenciamento />} />
       </Routes>
     </>
   );
