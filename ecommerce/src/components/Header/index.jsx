@@ -112,7 +112,8 @@ function Header() {
               >
                 {theme === "light" ? <BsSun /> : <BsMoonFill />}
               </button>
-              <button onClick={openCart}>Open Cart</button>
+              {/* <button onClick={openCart}>Carrinho</button> */}
+              <i className="bi bi-cart icon-cart" onClick={openCart}></i>
             </Nav>
           </Navbar.Collapse>
         </Container>
