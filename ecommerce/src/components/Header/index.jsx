@@ -3,11 +3,28 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./style.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { IoPersonCircleOutline } from "react-icons/io5";
+import axios from "axios";
 
 function Header() {
+  const url = "https://6542c2c301b5e279de1f8b80.mockapi.io/jogos";
+  const [categorias, setCategorias] = useState([]);
+
+  const getJogos = async () => {
+    try {
+      const { data } = await axios.get(url);
+      const categoriasApi = [...new Set(data.map((objeto) => objeto.categoria))];
+      setCategorias(categoriasApi);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getJogos();
+  }, []);
+
   const navigate = useNavigate();
 
   const armazenamento = localStorage.getItem("infos");
@@ -46,21 +63,14 @@ function Header() {
               id="basic-nav-dropdown"
               menuVariant="dark"
             >
-              <Link to="/categorias/ação">
-                <NavDropdown.Item onClick={() => cat("ação")}>
-                  Ação
+              {categorias.map((categoria) => (
+                <NavDropdown.Item
+                  key={categoria}
+                  onClick={() => cat(categoria)}
+                >
+                  <Link to={`/categorias/${categoria}`} >{categoria}</Link>
                 </NavDropdown.Item>
-              </Link>
-              <Link to="/categorias/puzzle">
-                <NavDropdown.Item onClick={() => cat("puzzle")}>
-                  Puzzle
-                </NavDropdown.Item>
-              </Link>
-              <Link to="/categorias/fps">
-                <NavDropdown.Item onClick={() => cat("fps")}>
-                  FPS
-                </NavDropdown.Item>
-              </Link>
+              ))}
             </NavDropdown>
             <Link to="/about">
               <Nav.Link href="/about">Sobre Nós</Nav.Link>

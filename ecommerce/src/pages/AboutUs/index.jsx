@@ -44,7 +44,7 @@ function About() {
         <div className="about-container">
           <div className="about-us">
             <h1>
-              <strong>Sobre nós</strong>
+              Sobre nós
             </h1>
             <p>
               A Game Hub é muito mais do que uma simples loja de jogos; é um

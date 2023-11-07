@@ -75,6 +75,7 @@ h2 {
   color: var(--cor1);
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   padding-left: 20px;
   opacity: 0;
   transition: ease .4s;

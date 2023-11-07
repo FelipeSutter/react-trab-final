@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:wght@200;400;700&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -23,6 +24,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Bungee', sans-serif;
+  color: var(--cor1);
+  text-shadow: -3px 3px 0 var(--cor4);
+}
+
+h2{
+  font-family: 'Bungee', sans-serif;
 }
 
 main {
